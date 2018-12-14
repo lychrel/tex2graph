@@ -1,0 +1,151 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[margin=0.5in, total={6in, 10in}]{geometry}
+\usepackage{multicol}
+\newlength\tindent
+\setlength{\tindent}{\parindent}
+\setlength{\parindent}{0pt}
+\renewcommand{\indent}{\hspace*{\tindent}}
+
+% script r's
+\def\rcurs{{\mbox{$\resizebox{.09in}{.08in}{\includegraphics[trim= 1em 0 14em 0,clip]{ScriptR}}$}}}
+\def\brcurs{{\mbox{$\resizebox{.09in}{.08in}{\includegraphics[trim= 1em 0 14em 0,clip]{BoldR}}$}}}
+
+\begin{document}
+\begin{multicols}{3}
+\textbf{Force} ($\mathbf{F}$, $\mathbf{f}$) \\
+$\mathbf{F} = \frac{1}{4\pi\epsilon_{0}}\frac{qQ}{\rcurs^{2}}\hat{\brcurs}$  \textit{point charge} \\
+$\mathbf{F} = Q\mathbf{E}$ \textit{e-field} \\
+$\mathbf{f} = \sigma\mathbf{E}$ \textit {per unit A} \\
+$\mathbf{f} = \frac{1}{2}\sigma(\mathbf{E}_{abv} + \mathbf{E}_{blw})$ \textit{general} \\
+\textbf{Electric Field} (\mathbf{E}) \\
+$\mathbf{E}(\mathbf{r}) = \frac{1}{4\pi\epsilon_{0}}\sum_{i=1}^{n}\frac{q_{i}}{\rcurs_{i}^{2}}\hat{\brcurs}_{i}$ \textit{point charges} \\
+$\mathbf{E}(\mathbf{r}) = \frac{1}{4\pi\epsilon_{0}}\int \frac{1}{\rcurs^{2}}\hat{\brcurs} dq$ \textit{continuous q-dist} \\
+$\mathbf{E}(\mathbf{r}) = \frac{1}{4\pi\epsilon_{0}}\int \frac{\lambda(\mathbf{r}')}{\rcurs^{2}}\hat{\brcurs} dl'$ \textit{linear q-dist} \\
+$\mathbf{E}(\mathbf{r}) = \frac{1}{4\pi\epsilon_{0}}\int \frac{\sigma(\mathbf{r}')}{\rcurs^{2}}\hat{\brcurs} da'$ \textit{surface q-dist} \\
+$\mathbf{E}(\mathbf{r}) = \frac{1}{4\pi\epsilon_{0}}\int \frac{\rho(\mathbf{r}')}{\rcurs^{2}}\hat{\brcurs} d\tau'$ \textit{volume q-dist} \\
+$\oint\mathbf{E}\cdot d\mathbf{a} = \frac{1}{\epsilon_{0}}Q_{enc}$ \textit{G-symm q-dist} \\
+$\mathbf{E} = -\nabla V$ \textit{e-potential} \\
+$\mathbf{E} = \mathbf{0}$ \textit{inside conductor} \\
+$\mathbf{E} \neq \mathbf{0}$ \textit{cavity in conductor} \\
+$\mathbf{E} = \frac{\sigma}{\epsilon_{0}}\hat{n}$ \textit{just outside conductor} \\
+$\mathbf{E_{dip}}(\mathbf{r}) = \frac{1}{4\pi\epsilon_{0}}\frac{1}{r^{3}}(3(\mathbf{p}\cdot\mathbf{\hat{r}})\mathbf{\hat{r}} - \mathbf{p})$ \textit{dipole, coordinate-free} \\
+
+\textbf{Electric Potential} ($V$) \\
+$V(\mathbf{r}) \equiv\int_{\mathcal{O}=\infty}^{\mathbf{r}} \mathbf{E}\cdot d\mathbf{l}$ \textit{def} \\
+$V = \sum_{i}V_{i}$ \textit{linsup} \\
+$V = \frac{1}{4\pi\epsilon_{0}}\sum_{i}\frac{q_{i}}{\rcurs_{i}}$ \textit{point charges} \\
+$V(\mathbf{r}) = \frac{1}{4\pi\epsilon_{0}}\int\frac{1}{\rcurs}dq$ \textit{continuous q-dist} \\
+$V(\mathbf{r}) = \frac{1}{4\pi\epsilon_{0}}\int\frac{\rho(\mathbf{r'})}{\rcurs}d\tau'$  \textit{volume q-dist} \\
+$V = \frac{1}{4\pi\epsilon_{0}}\int\frac{\lambda(\mathbf{r'})}{\rcurs}dl'$ \textit{linear q-dist} \\
+$V = \frac{1}{4\pi\epsilon_{0}}\int\frac{\sigma(\mathbf{r'})}{\rcurs}da'$ \textit{surface q-dist} \\
+$V(\mathbf{r}) = W/Q$ \textit{work} \\
+$\nabla^{2}V = -\frac{\rho}{\epsilon_{0}}$ \textit{Poisson w/ bc's} \\
+$\nabla^{2}V = 0$ \textit{no enclosed $\rho$, uniqueness thms} \\
+$\pm\mathbf{q}$  \textit{$q_{i}$ above conducting plane(s)} \\
+$V(\mathbf{r}) = \frac{1}{4\pi\epsilon_{0}}\sum_{n=0}^{\infty}\frac{1}{r^{n+1}}\\\int(r')^{n}P_{n}(\cos{\alpha})\rho(\mathbf{r'})d\tau'$ \textit{far from q-dist (mp exp)} \\
+$V(\mathbf{r}) = \frac{1}{4\pi\epsilon_{0}} (\frac{1}{r}\int\rho(\mathbf{r'})d\tau' \\ + \frac{1}{r^{2}}\int r'\cos{\alpha}\rho(\mathbf{r'})d\tau' \\ + \frac{1}{r^{3}}\int(r')^{2}(\frac{3}{2}\cos{\alpha}^{2}))$  \textit{far from q-dist (mp exp)} \\
+$V_{dip}(\mathbf{r}) = \frac{1}{4\pi\epsilon_{0}}\frac{\mathbf{p}\cdot\mathbf{\hat{r}}}{r^{2}}$  \textit{no net charge}
+
+
+\textbf{Work} ($W$)\\
+$W = \int_{a}^{b}\mathbf{F}\cdot d\mathbf{l}$ \textit{def} \\
+$W = QV(\mathbf{r})$ \textit{e-potential} \\
+$W = \frac{1}{2}\sum_{i=1}^{n}q_{i}V(\mathbf{r}_{i})$ \textit{p-q's, $V_{i}$  of others} \\
+$W = \frac{1}{2}\int\sigma V da$ \textit{surf-q density} \\
+$W = \frac{1}{2}\int\rho V d\tau$ \textit{vol-q density} \\
+$W = \frac{\epsilon_{0}}{2}\int E^{2}d\tau $ \textit{e-field, all space}
+
+\textbf{Energy} ($W$) \\
+$W = \frac{1}{2}\sum_{i=1}^{n}q_{i}V(\mathbf{r}_{i})$ \textit{assembly} \\
+$W = \frac{\epsilon_{0}}{2}\int E^{2}d\tau $ \textit{total, e-field} \\
+$W = \frac{1}{2}\int\rho Vd\tau$ \textit{total, q-dist} \\
+$W = \frac{1}{2}CV^{2}$ \textit{capacitor} \\
+
+\textbf{Dipole Moment} ($\mathbf{p}$) \\
+$\mathbf{p} \equiv \int{\mathbf{r}' \rho(\mathbf{r}') d\tau'}$ \textit{gen} \\
+$\mathbf{p} = \sum_{i}^{n}q_{i}\mathbf{r'}_{i}$ \textit{p-q's} \\
+$\mathbf{p} = q\mathbf{d}$ \textit{equal/opp q's} \\
+
+\textbf{Physical Dipole} ($\mathbf{d}$) \\
+
+\textbf{Curl of E} \\
+$\nabla\times\mathbf{E} = \mathbf{0}$ \textit{static q-dist}
+
+\textbf{Charge Density} ($\rho$) \\
+$\nabla\cdot\mathbf{E} = \frac{1}{\epsilon_{0}}\rho$ \textit{e-field} \\
+$\nabla^{2}V = -\frac{\rho}{\epsilon_{0}}$ \textit{e-potential} \\
+$\rho = 0$ \textit{inside conductor} \\
+
+\textbf{Capacitance} ($C$) \\
+$C \equiv \frac{Q^{+}}{V^{+}}$ \textit{def} \\
+
+
+\textbf{Surface Charge} ($\sigma$) \\
+$\sigma = -\epsilon_{0}\frac{\partial V}{\partial n}$ \textit{conductor} \\
+
+\textbf{e-Pressure} \\
+$P = \frac{\epsilon_{0}}{2}E^{2}$ \textit{conductor in e-field} \\
+
+\textbf{Charge Enclosed} ($Q_{enc}$) \\
+$\oint\mathbf{E}\cdot d\mathbf{a} = \frac{1}{\epsilon_{0}}Q_{enc}$ \textit{G-symm q-dist} \\
+$Q_{enc} = \int\lambda dl = \int\sigma da = \int\rho d\tau$ \textit{general} \\
+$Q_{enc} = Q_{surf}$ \textit{conductor} \\
+$Q_{enc} = -q_{induced}$ \textit{induction} \\
+$Q_{enc} = \sum q_{i}$ \textit{conductor w/ cavity q's} \\
+
+\textbf{Laplace} ($\nabla^{2}V = 0$) \\
+$V(x, y) = \sum_{n,m,\ldots}(Ae^{kx} + Be^{-kx})(C\sin{ky} + D\cos{ky})$  \textit{planes, ``box''} \\
+$V(r, \theta) = \sum_{l=0}^{\infty} \left(A_{l}r^{l} + \frac{B_{l}}{r^{l + 1}}\right)P_{l}(\cos{\theta})$ \textit{spherical} \\
+
+\textbf{Cartesian Coefficients} ($A, B, C, D$) \\
+$C = 0$  \textit{term diverges} \\
+$C = \mathcal{F}$ \textit{orthogonal series} \\
+$C = \mathcal{B}$ \textit{boundary conditions} \\
+
+\textbf{Spherical Coefficients} ($A_{l}, B_{l}$) \\
+$C = 0$  \textit{term diverges} \\
+$C = \mathcal{F}$ \textit{orthogonal series} \\
+$C = \mathcal{B}$ \textit{boundary conditions} \\
+
+\textbf{Method of Images} ($\pm\mathbf{q}$) \\
+
+\textbf{Fourier Method} ($\mathcal{F}$) \\
+
+\textbf{Legendre Polynomials} ($P_{l}, P_{n}$) \\
+$P_{l} = P_{n} \equiv \frac{1}{2^{l}l!}(\frac{d}{dx})^{l}(x^{2}-1)^{l}$ \textit{Rodrigues} \\
+
+
+\textbf{Boundary Conditions} ($\mathcal{B}$) \\
+$\mathcal{B} = \mathcal{B}(V_{in/out})$ \textit{(sphr) e-pot cont. across bndry} \\
+$\mathcal{B} = \mathcal{B}(V_{0})$ \textit{surf pot specified} \\
+$\mathcal{B} = \mathcal{B}(\sigma_{0})$ \textit{surf charge specified} \\
+
+\end{multicols}
+
+\pagebreak
+\begin{multicols}{3}
+
+\textbf{Separation vector} \\
+$\brcurs = \mathbf{r} - \mathbf{r'}$ \textit{general} \\
+\textbf{Charge differential} \\
+$dq = \lambda dl'$ \textit{linear dist} \\
+$dq = \sigma da'$ \textit{surface dist} \\
+$dq = \rho d\tau'$ \textit{volume dist} \\
+\textbf{Line differential} \\
+$d\mathbf{l} = dr\hat{\mathbf{r}} + rd\theta \hat{\mathbf{\theta}} + r\sin{\theta}d\phi \hat{\mathbf{\phi}}$ \\
+\textbf{Volume differential} \\
+$d\tau = s'ds'd\phi dz$ \textit{cylin} \\
+$d\tau = r^{2}\sin\theta dr d\theta d\phi $ \textit{sphr} \\
+\textbf{Boundary Conditions} \\
+$E^{\perp}_{above} - E^{\perp}_{below} = \frac{\sigma}{\epsilon_{0}}$ \textit{any boundry} \\
+$\frac{\partial V_{above}}{\partial n} - \frac{\partial V_{below}}{\partial n} = -\frac{\sigma}{\epsilon_{0}}$ \textit{any boundry} \\
+$V_{in}(R) = V_{out}(R)$ \textit{V cont across boundry}
+$V(\theta_{1}) = V(\theta_{2})$ \textit{conductor $\rightarrow$  equipotential} \\
+\textbf{Normal Derivative} \\
+$\frac{\partial V}{\partial n} = \nabla V \cdot \hat{n}$ \textit{general} \\
+
+\end{multicols}
+\end{document}
