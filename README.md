@@ -12,4 +12,15 @@ Reduce problem solving to path-tracing along a directed knowledge graph (given a
   2. edges are (typically one-way) mappings, weighted by conditions for use
 - "Solving a problem" becomes tracing a path from one quantity to another
 
-Efficient, if neccesary, for small topic spaces (e.g. first-semester Electromagnetism) 
+### Errata
+- Should be suitably efficient for small topic spaces (e.g. first-semester Electromagnetism) 
+- Doesn't _need_ to be directed, but makes it easier on the user
+
+### Pseudocode
+```python
+quantities = get_headers(file)
+for quantity in quantities:
+  graph.add_vertex(quantity)
+for equation in get_equations(file):
+  graph.add_edge(equation.input, equation.output, equation.weight)
+```
