@@ -13,8 +13,7 @@ Reduce problem solving to path-tracing along a directed knowledge graph (given a
 - "Solving a problem" becomes tracing a path from one quantity to another
 
 ### Errata
-- Should be suitably efficient for small topic spaces (e.g. first-semester Electromagnetism) 
-- Doesn't _need_ to be directed, but makes it easier on the user
+- See issues for further deliberation
 
 ### Pseudocode
 ```python
