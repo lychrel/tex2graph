@@ -1,7 +1,16 @@
 import sys
 import progressbar
 import re
+from pylab import figure, axes, pie, title, show
+import pylab
+
+from mayavi import mlab
+import random
+import numpy as np
+
 import matplotlib.pyplot as plt
+
+import networkx as nx
 
 # -*- coding: utf-8 -*-
 """ Parser docstring
@@ -23,6 +32,9 @@ This script takes a LaTeX list of equations, then:
 subject = sys.argv[1]
 filepath = "equations/" + subject + ".tex"
 
+# dictionary of complexities
+complexity_weights = {"\\times": 0.5, "\\rcurs": 1.0, "\\brcurs": 1.0,
+                      "\\int": 0.5, "\\oint": 0.5, "\\nabla": 0.2}
 
 # For looping through
 def pairwise(iterable):
@@ -75,12 +87,6 @@ for i, header_group in enumerate(header_groups):
         if "_{" in symb_string:
             # ignore subscripts
             symb_string = symb_string.split("_{")[0]
-        # TODO: this may be a terrible idea... vectors will always be boldfaced.
-        """
-        if "\\mathbf{" in symb_string:
-            # Remove boldface wrappers
-            symb_string = symb_string.split("\\mathbf{")[1].split("}")[0]
-        """
         # Add the (unformatted) symbol to list of symbols found
         symbols.append(symb_string)
 
@@ -113,7 +119,7 @@ for i, header_group in enumerate(header_groups):
     # Re-establish the principal quantity
     header = header_group.split("\n")[0]
 
-    # TODO this may be useless
+    # TODO this is useless (see above)
     # Get name for this quantity
     if num_symbols == 0:
         name = header.split("{")[1].split("}")[0]
@@ -155,21 +161,11 @@ for i, header_group in enumerate(header_groups):
         LHS = LHS.split("$")[1]
         equation = "$" + equation_line.split("$")[1] + "$"
 
-        # DEBUG: print LHS and RHS
-        #print("LHS: {}".format(LHS))
-        #print("RHS: {}".format(RHS))
-        #print("condition: {}".format(condition))
-        #print("equation: {}".format("$" + equation_line.split("$")[1] + "$"))
-
-        # print(symbol)
-
         mapped_from_side = RHS
         # establish mapped-from side
         for symb in symbol[name]:
             if symb in RHS:
                 mapped_from_side = LHS
-
-        #print(name_of)
 
         # For every possible symbol,
         for symb in name_of.keys():
@@ -179,44 +175,58 @@ for i, header_group in enumerate(header_groups):
                 # Add a new edge to the graph
                 # (start symbol, end symbol, equtaion, condition)
                 # BUG: i throw out the secondary symbol (symbol[name] yields a list)
-                edges.append((symb, symbol[name][0], equation, condition))
+                # Names
+                start = "$" + symb.split(",")[0] + "$"
+                end = "$" + symbol[name][0].split(",")[0] + "$"
+                #edges.append((symb, symbol[name][0], equation, condition))
+                edges.append((start, end, equation, condition))
 
     bar.update(i)
 
-
 print("{} edges collected\n".format(len(edges)))
 
-# dictionary of complexities
-complexity_weights = {"\\times": 0.5, "\\rcurs": 1.0, "\\brcurs": 1.0,
-                      "\\int": 0.5, "\\oint": 0.5, "\\nabla": 0.2}
-
-# calculate edge complexity weights
-edge_weights = []
-for edge in edges:
-    edge_weight = 0.0
-    for flag in complexity_weights:
-        edge_weight += len([m.start() for m in re.finditer(flag, edge[2])])
-    edge_weights.append(edge_weight)
-
-edge_weights = [val / max(edge_weights) for val in edge_weights]
-
+# TODO compute edge weights here instead of after, so they can go into the dict
 # condition edges properly for networkx
 nedges = []
-for edge, weight in zip(edges, edge_weights):
-    edge_dict = {"weight": weight, "eqn": edge[2], "condition": edge[3]}
+for edge in edges:
+    edge_dict = {"eqn": edge[2], "condition": edge[3]}
     nedges.append((edge[0], edge[1], edge_dict))
 
-import networkx as nx
+symbol_verts = ["$" + wrapper[0].split(",")[0] + "$" for wrapper in symbol.values()]
+
+print("Constructing graph!")
 G = nx.DiGraph()
 
-symbol_verts = [wrapper[0] for wrapper in symbol.values()]
-
-# Add graph verts
-G.add_nodes_from(symbol_verts)
+# Add graph nodes
+labels = {}
+for i, node in enumerate(symbol_verts):
+    G.add_node(node)#, label=r"$\sigma$")
+    labels[i] = node
 
 # Add graph edges
 G.add_edges_from(nedges)
 
-plt.subplot(121)
-nx.draw(G, with_labels=True, font_weight='bold')
-plt.show()
+# Compute edge weights
+e_weights = []
+for edge in G.edges:
+    eqn = G.get_edge_data(edge[0], edge[1])["eqn"]
+    edge_weight = 0.0
+    for flag in complexity_weights.keys():
+        edge_weight += complexity_weights[flag] * float(len([m.start() for m in re.finditer(flag, eqn)]))
+    e_weights.append(edge_weight)
+
+# Color nodes by popularity
+n_weights = []
+for node in G.nodes():
+    n_weights.append(G.in_degree(node))
+
+# Visualization
+figure(1, figsize=(8, 8))
+pos = nx.circular_layout(G)
+nx.draw(G, pos=pos, node_color=n_weights, edge_color=e_weights,
+        with_labels=True, font_weight='bold', cmap=plt.cm.spring)
+
+#edge_labels = nx.get_edge_attributes(G,'eqn')
+#nx.draw_networkx_edge_labels(G, pos, edge_labels = e_weights)
+
+pylab.savefig('tmp.png')
