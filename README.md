@@ -1,3 +1,5 @@
+<!-- Banner Image -->
+![Electromagnetism](img/weighted_cropped.png)
 # knowledge-grapher
 Reduce problem solving to path-tracing along a directed knowledge graph (given a .tex of equations grouped by input/output)
 
