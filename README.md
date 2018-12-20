@@ -1,6 +1,6 @@
 <!-- Banner Image -->
 ![Electromagnetism](img/weighted_cropped.png)
-# knowledge-grapher
+# tex-2-graph
 Reduce problem solving to path-tracing along a directed knowledge graph (given a .tex of equations grouped by input/output)
 
 ### Motivation
