@@ -14,12 +14,3 @@ Reduce problem solving to path-tracing along a directed knowledge graph (given a
 
 ### Errata
 - See issues for further deliberation
-
-### Pseudocode
-```python
-quantities = get_headers(file)
-for quantity in quantities:
-  graph.add_vertex(quantity)
-for equation in get_equations(file):
-  graph.add_edge(equation.input, equation.output, equation.weight)
-```
