@@ -18,7 +18,7 @@
 \textbf{Force} ($\mathbf{F}$, $\mathbf{f}$) \\
 $\mathbf{F} = \frac{1}{4\pi\epsilon_{0}}\frac{qQ}{\rcurs^{2}}\hat{\brcurs}$  \textit{point charge} \\
 $\mathbf{F} = Q\mathbf{E}$ \textit{e-field} \\
-$\mathbf{f} = \sigma\mathbf{E}$ \textit {per unit A} \\
+$\mathbf{f} = \sigma\mathbf{E}$ \textit{per unit A} \\
 $\mathbf{f} = \frac{1}{2}\sigma(\mathbf{E}_{abv} + \mathbf{E}_{blw})$ \textit{general} \\
 $\mathbf{F}_{mag} = Q(\mathbf{v}\times\mathbf{B})$ \textit{B-field} \\
 $\mathbf{F} = Q(\mathbf{E} + (\mathbf{v}\times\mathbf{B}))$ \textit{E+B fields}
@@ -41,7 +41,7 @@ $\mathbf{E} = \mathbf{0}$ \textit{inside conductor} \\
 $\mathbf{E} \neq \mathbf{0}$ \textit{cavity in conductor} \\
 $\mathbf{E} = \frac{\sigma}{\epsilon_{0}}\hat{n}$ \textit{just outside conductor} \\
 $\mathbf{E_{dip}}(\mathbf{r}) = \frac{1}{4\pi\epsilon_{0}}\frac{1}{r^{3}}(3(\mathbf{p}\cdot\mathbf{\hat{r}})\mathbf{\hat{r}} - \mathbf{p})$ \textit{dipole, coordinate-free} \\
-$\nabla\times\mathbf{E} = 0$ \textit{always} \\
+$\nabla\times\mathbf{E} = \mathbf{0}$ \textit{always} \\
 $E^{\perp}_{above} - E^{\perp}_{below} = \frac{\sigma}{\epsilon_{0}}$ \textit{any surf q} \\
 $\mathcal{E} = \oint\mathbf{E}\cdot d\mathbf{l}$ \textit{emf} \\
 $\oint\mathbf{E}\cdot\ d\mathbf{l} = -\int\frac{\partial\mathbf{B}}{\partial t}\cdot d\mathbf{a}$ \textit{Farraday} \\
@@ -53,20 +53,20 @@ $\mathbf{B}(\mathbf{r}) = \frac{\mu_{0}}{4\pi}\int\frac{\mathbf{K}(\mathbf{r}')\
 $\mathbf{B}(\mathbf{r}) = \frac{\mu_{0}}{4\pi}\int\frac{\mathbf{J}(\mathbf{r}')\times\hat{\brcurs}}{\rcurs^{2}}d\tau'$ \textit{steady vol I} \\
 $\oint\mathbf{B}\cdot d\mathbf{l} = \mu_{0}I_{enc}$ \textit{A-symm steady I} \\
 $\oint\mathbf{B}\cdot d\mathbf{l} = \mu_{0}\int\mathbf{J}\cdot d\mathbf{a}$ \textit{A-symm steady I} \\
-$\nabla\cdot\mathbf{B} = 0$ \textit{always} \\
-$\mathbf{B} = \nabla\times\mathbf{A}$ \text{vec potential} \\
+$\nabla\cdot\mathbf{B} = \mathbf{0}$ \textit{always} \\
+$\mathbf{B} = \nabla\times\mathbf{A}$ \textit{vec potential} \\
 $\mathbf{B}_{abv} - \mathbf{B}_{blw} = \mu_{0}(\mathbf{K}\times\mathbf{\hat{n}})$ \textit{any at surf I} \\
 $\mathbf{B}_{dip}(\mathbf{r}) = \frac{\mu_{0}m}{4\pi r^{3}}(2\cos{\theta}\mathbf{\hat{r}} + \sin{\theta}\mathbf{\hat{\theta}})$ \textit{due to dipole} \\
 $\mathbf{B}_{dip}(\mathbf{r}) = \frac{\mu_{0}}{4\pi}\frac{1}{r^{3}}(3(\mathbf{m}\cdot\mathbf{\hat{r}})\mathbf{\hat{r}}-\mathbf{m})$ \textit{coord-free} \\
 $\nabla\times\mathbf{E} = -\frac{\partial\mathbf{B}}{\partial t}$ \textit{Farraday} \\
 $\nabla\times\mathbf{B}=\mu_{0}\mathbf{J}+\mu_{0}\epsilon_{0}\frac{\partial\mathbf{E}}{\partial t}$ \textit{corrective}
 \textbf{Magnetic Vector Potential} ($\mathbf{A}$) \\
-$\nabla\cdot\mathbf{A} = 0$ \textit{always} \\
+$\nabla\cdot\mathbf{A} = \mathbf{0}$ \textit{always} \\
 $\mathbf{A}(\mathbf{r}) = \frac{\mu_{0}}{4\pi}\int\frac{\mathbf{J}(\mathbf{r}')}{\rcurs}d\tau '$ \textit{finite vol I dens} \\
 $\mathbf{A}(\mathbf{r}) = \frac{\mu_{0}I}{4\pi}\int\frac{1}{\rcurs}d\mathbf{l}'$ \textit{vol I dens} \\
 $\mathbf{A}(\mathbf{r}) = \frac{\mu_{0}}{4\pi}\int\frac{\mathbf{K}}{\rcurs}da '$ \textit{vol I dens} \\
 $\frac{\partial\mathbf{A}_{abv}}{\partial n} - \frac{\partial\mathbf{A}_{blw}}{\partial n} = -\mu_{0}\mathbf{K}$ \textit{any at surf I} \\
-$\mathbf{A}(\mathbf{r}) = \frac{\mu_{0}I}{4\pi}\sum_{n=0}^{\infty}\frac{1}{r^{n+1}}\oint(r')^{n}P_{n}(\cos{\alpha})d\mathbf{l}'$ \text{alph src to field} \\
+$\mathbf{A}(\mathbf{r}) = \frac{\mu_{0}I}{4\pi}\sum_{n=0}^{\infty}\frac{1}{r^{n+1}}\oint(r')^{n}P_{n}(\cos{\alpha})d\mathbf{l}'$ \textit{alph src to field} \\
 $\mathbf{A}(\mathbf{r}) = \frac{\mu_{0}I}{4\pi}(\frac{1}{r}\oint d\mathbf{l}' + \frac{1}{r^{2}} \oint r'\cos{\alpha}d\mathbf{l}' \\ + \frac{1}{r^{3}}\oint (r')^{2}(\frac{3}{2}\cos{\alpha}^{2}-\frac{1}{2})d\mathbf{l}' + \cdots)$ \textit{localized I-dist at distant pts} \\
 $\mathbf{A}_{dip}(\mathbf{r}) = \frac{\mu_{0}}{4\pi}\frac{\mathbf{m}\times\mathbf{\hat{r}}}{r^{2}}$ \textit{dipole approx} \\
 $\mathbf{A}_{dip}(\mathbf{r}) = \frac{\mu_{0}}{4\pi}\frac{m\sin{\theta}}{r^{2}}\mathbf{\hat{\phi}}$ \textit{dip at origin, sphrcl}
@@ -100,14 +100,14 @@ $V = \frac{1}{4\pi\epsilon_{0}}\int\frac{\lambda(\mathbf{r'})}{\rcurs}dl'$ \text
 $V = \frac{1}{4\pi\epsilon_{0}}\int\frac{\sigma(\mathbf{r'})}{\rcurs}da'$ \textit{surface q-dist} \\
 $V(\mathbf{r}) = W/Q$ \textit{work} \\
 $\nabla^{2}V = -\frac{\rho}{\epsilon_{0}}$ \textit{Poisson w/ bc's} \\
-$\nabla^{2}V = 0$ \textit{no enclosed $\rho$, uniqueness thms} \\
+$\nabla^{2}V = \mathbf{0}$ \textit{no enclosed $\rho$, uniqueness thms} \\
 $\pm\mathbf{q}$  \textit{$q_{i}$ above conducting plane(s)} \\
 $V(\mathbf{r}) = \frac{1}{4\pi\epsilon_{0}}\sum_{n=0}^{\infty}\frac{1}{r^{n+1}}\\\int(r')^{n}P_{n}(\cos{\alpha})\rho(\mathbf{r'})d\tau'$ \textit{distnt q-dist (mp exp)} \\
 $V(\mathbf{r}) = \frac{1}{4\pi\epsilon_{0}} (\frac{1}{r}\int\rho(\mathbf{r'})d\tau' \\ + \frac{1}{r^{2}}\int r'\cos{\alpha}\rho(\mathbf{r'})d\tau' \\ + \frac{1}{r^{3}}\int(r')^{2}(\frac{3}{2}\cos{\alpha}^{2}))$  \textit{distnt q-dist (mp exp)} \\
 $V_{dip}(\mathbf{r}) = \frac{1}{4\pi\epsilon_{0}}\frac{\mathbf{p}\cdot\mathbf{\hat{r}}}{r^{2}}$  \textit{no net charge} \\
 $\frac{\partial V_{above}}{\partial n} - \frac{\partial V_{below}}{\partial n} = -\frac{\sigma}{\epsilon_{0}}$ \textit{any surf q} \\
 $V=IR$ \textit{ohm} \\
-$P = VI =  I^{2}R$ \texit{Joule heating} \\
+$P = VI =  I^{2}R$ \textit{Joule heating} \\
 \textbf{Current}, ($I, \mathbf{I}$) \\
 $\mathbf{I} = \lambda\mathbf{v}$ \textit{moving line charge} \\
 $I = \int_{\mathcal{S}} \mathbf{J}\cdot d\mathbf{a}$ \textit{vol I dens} \\
@@ -120,7 +120,7 @@ $\mathbf{K} = \sigma\mathbf{v}$ \textit{mobile surf q dens} \\
 $\mathbf{J} \equiv \frac{d\mathbf{I}}{da_{\perp}}$ \textit{I per unit area} \\
 $\mathbf{J} = \rho\mathbf{v}$ \textit{mobile vol q dens} \\
 $\nabla\cdot\mathbf{J} = -\frac{\partial\rho}{\partial t}$ \textit{local q consvtn} \\
-$\nabla\cdot\mathbf{J} = 0$ \textit{magnetostatics} \\
+$\nabla\cdot\mathbf{J} = \mathbf{0}$ \textit{magnetostatics} \\
 $\nabla\times\mathbf{B} = \mu_{0}\mathbf{J}$ \textit{B field} \\
 $\nabla^{2}\mathbf{A} = -\mu_{0}\mathbf{J}$ \textit{vec pot} \\
 $\mathbf{J} = \sigma\mathbf{f}$ \textit{f per unit q} \\
@@ -136,7 +136,7 @@ $W = \frac{1}{2}\sum_{i=1}^{n}q_{i}V(\mathbf{r}_{i})$ \textit{p-q's, $V_{i}$  of
 $W = \frac{1}{2}\int\sigma V da$ \textit{surf-q density} \\
 $W = \frac{1}{2}\int\rho V d\tau$ \textit{vol-q density} \\
 $W = \frac{\epsilon_{0}}{2}\int E^{2}d\tau $ \textit{e-field, all space} \\
-$W_{mag}=0$ \textit{B forces don't work} \\
+$W_{mag}=\mathbf{0}$ \textit{B forces don't work} \\
 $W = \frac{1}{2}LI^{2}$ \textit{cranking current} \\
 $W = \frac{1}{2}\oint(\mathbf{A}\cdot\mathbf{I})dl$ \textit{surf I} \\
 $W = \frac{1}{2}\int_{\mathcal{V}}(\mathbf{A}\cdot\mathbf{J})d\tau$ \textit{vol I} \\
@@ -157,7 +157,7 @@ $\nabla\times\mathbf{E} = \mathbf{0}$ \textit{static q-dist}
 \textbf{Volume Charge Density} ($\rho$) \\
 $\nabla\cdot\mathbf{E} = \frac{1}{\epsilon_{0}}\rho$ \textit{e-field} \\
 $\nabla^{2}V = -\frac{\rho}{\epsilon_{0}}$ \textit{e-potential} \\
-$\rho = 0$ \textit{inside conductor} \\
+$\rho = \mathbf{0}$ \textit{inside conductor} \\
 \textbf{Capacitance} ($C$) \\
 $C \equiv \frac{Q^{+}}{V^{+}}$ \textit{def} \\
 \textbf{Surface Charge} ($\sigma$) \\
@@ -170,15 +170,15 @@ $Q_{enc} = \int\lambda dl = \int\sigma da = \int\rho d\tau$ \textit{general} \\
 $Q_{enc} = Q_{surf}$ \textit{conductor} \\
 $Q_{enc} = -q_{induced}$ \textit{induction} \\
 $Q_{enc} = \sum q_{i}$ \textit{conductor w/ cavity q's} \\
-\textbf{Laplace} ($\nabla^{2}V = 0$) \\
+\textbf{Laplace} ($\nabla^{2}V = \mathbf{0}$) \\
 $V(x, y) = \sum_{n,m,\ldots}(Ae^{kx} + Be^{-kx})(C\sin{ky} + D\cos{ky})$  \textit{planes, ``box''} \\
 $V(r, \theta) = \sum_{l=0}^{\infty} \left(A_{l}r^{l} + \frac{B_{l}}{r^{l + 1}}\right)P_{l}(\cos{\theta})$ \textit{sph} \\
 \textbf{Cartesian Coefficients} ($A, B, C, D$) \\
-$C = 0$  \textit{term diverges} \\
+$C = \mathbf{0}$  \textit{term diverges} \\
 $C = \mathcal{F}$ \textit{orthogonal series} \\
 $C = \mathcal{B}$ \textit{boundary conditions} \\
 \textbf{Spherical Coefficients} ($A_{l}, B_{l}$) \\
-$C = 0$  \textit{term diverges} \\
+$C = \mathbf{0}$  \textit{term diverges} \\
 $C = \mathcal{F}$ \textit{orthogonal series} \\
 $C = \mathcal{B}$ \textit{boundary conditions} \\
 \textbf{Method of Images} ($\pm\mathbf{q}$) \\
@@ -189,7 +189,7 @@ $P_{l} = P_{n} \equiv \frac{1}{2^{l}l!}(\frac{d}{dx})^{l}(x^{2}-1)^{l}$ \textit{
 $\mathcal{B} = \mathcal{B}(V_{in/out})$ \textit{(sphr) e-pot cont. crss bndry} \\
 $\mathcal{B} = \mathcal{B}(V_{0})$ \textit{surf pot specified} \\
 $\mathcal{B} = \mathcal{B}(\sigma_{0})$ \textit{surf charge specified} \\
-\textbf{Zero} ($0$) \\
+\textbf{Zero} ($\mathbf{0}$) \\
 \end{multicols}
 \pagebreak
 \begin{multicols}{3}
