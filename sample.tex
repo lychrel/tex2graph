@@ -1,0 +1,22 @@
+\documentclass[9pt]{extarticle}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[margin=0.5in, total={6in, 10in}]{geometry}
+\usepackage{multicol}
+\newlength\tindent
+\setlength{\tindent}{\parindent}
+\setlength{\parindent}{0pt}
+\renewcommand{\indent}{\hspace*{\tindent}}
+
+% script r's
+\def\rcurs{{\mbox{$\resizebox{.09in}{.08in}{\includegraphics[trim= 1em 0 14em 0,clip]{ScriptR}}$}}}
+\def\brcurs{{\mbox{$\resizebox{.09in}{.08in}{\includegraphics[trim= 1em 0 14em 0,clip]{BoldR}}$}}}
+
+\begin{document}
+\begin{multicols}{3}
+\textbf{Quantity} ($\mathbf{Q}$, $\mathbf{q}$) \\
+$\mathbf{Q} = \frac{1}{4\pi\epsilon_{0}}\frac{2}{\rcurs^{2}}\hat{\brcurs}$  \textit{conditions for use} \\
+$\mathbf{Q} = A\mathbf{E}$ \textit{e-field} \\
+\end{multicols}
+\end{document}
